@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'auth_service.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+   LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -22,25 +22,25 @@ class _LoginPageState extends State<LoginPage> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title:  Text('Login')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding:  EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Email'),
+                decoration:  InputDecoration(labelText: 'Email'),
                 validator: (value) =>
                     value != null && value.contains('@')
                         ? null
                         : 'Enter valid email',
                 onSaved: (value) => email = value!.trim(),
               ),
-              const SizedBox(height: 16),
+               SizedBox(height: 16),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration:  InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) =>
                     value != null && value.length >= 6
@@ -52,17 +52,17 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text('Forgot Password?'),
+                  child:  Text('Forgot Password?'),
                 ),
               ),
-              const SizedBox(height: 16),
+               SizedBox(height: 16),
               if (errorMessage != null)
-                Text(errorMessage!, style: const TextStyle(color: Colors.red)),
-              const SizedBox(height: 16),
+                Text(errorMessage!, style:  TextStyle(color: Colors.red)),
+               SizedBox(height: 16),
               isLoading
-                  ? const CircularProgressIndicator()
+                  ?  CircularProgressIndicator()
                   : ElevatedButton(
-                      child: const Text('Login'),
+                      child:  Text('Login'),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
@@ -78,12 +78,12 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                     ),
-              const SizedBox(height: 16),
+               SizedBox(height: 16),
               TextButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/register');
                 },
-                child: const Text('Register'),
+                child:  Text('Register'),
               ),
             ],
           ),

@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'auth_service.dart';
 
 class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
+   RegistrationPage({super.key});
 
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
@@ -34,46 +34,46 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Register')),
+      appBar: AppBar(title:  Text('Register')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding:  EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Name'),
+                  decoration:  InputDecoration(labelText: 'Name'),
                   validator: (value) =>
                       value != null && value.isNotEmpty
                           ? null
                           : 'Enter name',
                   onSaved: (value) => name = value!.trim(),
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Email'),
+                  decoration:  InputDecoration(labelText: 'Email'),
                   validator: (value) =>
                       value != null && value.contains('@')
                           ? null
                           : 'Enter valid email',
                   onSaved: (value) => email = value!.trim(),
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 TextFormField(
                   controller: _passwordController,
                   decoration:
-                      const InputDecoration(labelText: 'Password'),
+                       InputDecoration(labelText: 'Password'),
                   obscureText: true,
                   validator: (value) =>
                       value != null && value.length >= 6
                           ? null
                           : 'Minimum 6 characters',
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 TextFormField(
                   controller: _confirmPasswordController,
-                  decoration: const InputDecoration(
+                  decoration:  InputDecoration(
                       labelText: 'Confirm Password'),
                   obscureText: true,
                   validator: (value) =>
@@ -81,15 +81,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           ? null
                           : 'Passwords do not match',
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16),
                 if (errorMessage != null)
                   Text(errorMessage!,
-                      style: const TextStyle(color: Colors.red)),
-                const SizedBox(height: 24),
+                      style:  TextStyle(color: Colors.red)),
+                 SizedBox(height: 24),
                 isLoading
-                    ? const CircularProgressIndicator()
+                    ?  CircularProgressIndicator()
                     : ElevatedButton(
-                        child: const Text('Register'),
+                        child:  Text('Register'),
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
@@ -119,7 +119,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/login');
                   },
-                  child: const Text('Back to Login'),
+                  child:  Text('Back to Login'),
                 ),
               ],
             ),

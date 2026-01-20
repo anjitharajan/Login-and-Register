@@ -13,13 +13,13 @@ class AuthService extends ChangeNotifier {
       return null;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
-        case 'user-not-found':
+        case 'user not found':
           return 'No account found for this email';
-        case 'wrong-password':
+        case 'wrong password':
           return 'Incorrect password';
-        case 'invalid-email':
+        case 'invalid email':
           return 'Invalid email address';
-        case 'user-disabled':
+        case 'user disabled':
           return 'This account has been disabled';
         default:
           return 'Login failed. Please try again.';
@@ -40,9 +40,9 @@ class AuthService extends ChangeNotifier {
       return null;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
-        case 'email-already-in-use':
+        case 'email already in use':
           return 'This email is already registered';
-        case 'invalid-email':
+        case 'invalid email':
           return 'Invalid email address';
         case 'weak-password':
           return 'Password must be at least 6 characters';

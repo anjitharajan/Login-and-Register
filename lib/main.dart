@@ -12,11 +12,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginPage(),
+        home:  LoginPage(),
         routes: {
-          '/login': (_) => const LoginPage(),
-          '/register': (_) => const RegistrationPage(),
+          '/login': (_) =>  LoginPage(),
+          '/register': (_) =>  RegistrationPage(),
         },
       ),
     );
