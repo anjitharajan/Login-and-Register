@@ -1,6 +1,6 @@
 # login_and_register_app
 
-A new Flutter project for Login and Registration.
+A new Flutter project for Login and Registration Using Dart Programming Language.
 
 ## Getting Started
 
