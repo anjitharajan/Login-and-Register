@@ -13,7 +13,7 @@ class AuthService extends ChangeNotifier {
       return null;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
-        case 'user-not-found':
+        case 'user not found':
           return 'No account found for this email';
         case 'wrong password':
           return 'Incorrect password';

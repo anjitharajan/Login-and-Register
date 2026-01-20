@@ -22,16 +22,16 @@ class _LoginPageState extends State<LoginPage> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title:  Text('Login')),
+      appBar: AppBar(title: Text('Login')),
       body: Padding(
-        padding:  EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration:  InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(labelText: 'Email'),
                 validator: (value) =>
                     value != null && value.contains('@')
                         ? null
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
                SizedBox(height: 16),
               TextFormField(
-                decoration:  InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: (value) =>
                     value != null && value.length >= 6
@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child:  Text('Forgot Password?'),
+                  child: Text('Forgot Password?'),
                 ),
               ),
                SizedBox(height: 16),
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
               isLoading
                   ?  CircularProgressIndicator()
                   : ElevatedButton(
-                      child:  Text('Login'),
+                      child: Text('Login'),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/register');
                 },
-                child:  Text('Register'),
+                child: Text('Register'),
               ),
             ],
           ),
